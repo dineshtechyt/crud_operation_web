@@ -30,3 +30,6 @@ urouter.delete("/deleteduser/:id", requireSignIn, deleteDUserController);
 urouter.get("/fetchall", requireSignIn, getAllDUserController);
 urouter.get("/fetsingle/:id", requireSignIn, getSingleDUserController);
 
+
+//------------this is the search filter and pagination part-----------//
+
