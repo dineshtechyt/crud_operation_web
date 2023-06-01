@@ -6,11 +6,11 @@ import demoUserModel from "../models/demoUserModel.js";
 // filters
 export const userFiltersController = async (req, res) => {
     try {
-      const { checked, radio } = req.body;
+      const { checked, radio } = req.body; //--here checked is the bollean  &  radio is the array
       let args = {};
       if (checked.length > 0) args.category = checked;
       if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
-      const products = await demoUserModel.find(args);
+      const products = await demoUserModel.find(args);//---------------means = args:{category:checked,price:radio}
       res.status(200).send({
         success: true,
         products,
