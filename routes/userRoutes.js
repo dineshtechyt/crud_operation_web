@@ -13,6 +13,7 @@ import {
   getSingleDUserController,
   updateDUserController,
 } from "../controllers/demoUserController.js";
+import { userFiltersController } from "../controllers/OtherFunction.js";
 
 export const urouter = express.Router();
 
@@ -30,7 +31,5 @@ urouter.delete("/deleteduser/:id", requireSignIn, deleteDUserController);
 urouter.get("/fetchall", requireSignIn, getAllDUserController);
 urouter.get("/fetsingle/:id", requireSignIn, getSingleDUserController);
 
-
 //------------this is the search filter and pagination part-----------//
-
-
+urouter.post("/filterAge", requireSignIn, userFiltersController);
